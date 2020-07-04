@@ -1,0 +1,19 @@
+<center>
+    <h3> liste des modeles </h3>
+    <table border="2">
+        <th> Id</th>
+        <th> Libelle</th>
+        <th> Pays</th>
+        {% for modele in modeles %}
+            <tr>
+                <td> {{ modele.id }}</td>
+                <td> {{ modele.libelle }}</td>
+                <td> {{ modele.pays }}</td>
+                <td> <a href="{{path( 'esprit_SuppModele' , {'id':modele.id} )}}"
+                        onclick="return confirm('est ttttt'+{{ modele.id }})"> Supprimer </a></td>
+                <td> <a href="{{path( 'esprit_updateModele' , {'id':modele.id} )}}"> mettre a jour </a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</center>

@@ -1,0 +1,57 @@
+esprit_parc_homepage:
+    path:     /
+    defaults: { _controller: EspritParcBundle:Default:index }
+esprit_parc_affichage:
+    path: /afficher/{marque}
+    defaults: { _controller: EspritParcBundle:Voiture:affichage }
+esprit_parc_liste:
+    path: /list/{marques}
+    defaults: { _controller: EspritParcBundle:Voiture:list }
+esprit_parc_Details:
+        path: /details
+        defaults: { _controller: EspritParcBundle:Voiture:details }
+esprit_listModele:
+  path: /listModele
+  defaults: { _controller: EspritParcBundle:Modele:list }
+esprit_SuppModele:
+    path: /SupModele
+    defaults: { _controller: EspritParcBundle:Modele:supprimer }
+esprit_addModele:
+  path: /addModele
+  defaults: { _controller: EspritParcBundle:Modele:add }
+esprit_updateModele:
+    path: /updateModele
+    defaults: { _controller: EspritParcBundle:Modele:update }
+esprit_addModele2:
+  path: /addModele2
+  defaults: { _controller: EspritParcBundle:Modele:add2 }
+esprit_addVoiture:
+  path: /addVoiture
+  defaults: { _controller: EspritParcBundle:Voiture:add }
+esprit_listVoiture:
+    path: /listVoiture
+    defaults: { _controller: EspritParcBundle:Voiture:listvoiture }
+esprit_suppVoiture:
+      path: /SupVoiture
+      defaults: { _controller: EspritParcBundle:Voiture:suppVoiture }
+esprit_updateVoiture:
+        path: /updateVoiture
+        defaults: { _controller: EspritParcBundle:Voiture:updateVoiture }
+esprit_rechecheVoiture:
+        path: /rechecheVoiture
+        defaults: { _controller: EspritParcBundle:Voiture:rechecheVoiture }
+esprit_findModeleByPays:
+  path: /findByPays/{pays}
+  defaults: { _controller: EspritParcBundle:Modele:findByPays }
+esprit_findPaysDQL:
+  path: /dql/{pays}
+  defaults: { _controller: EspritParcBundle:Modele:findByPays2 }
+esprit_findvoitureDQL:
+  path: /findvoiture
+  defaults: { _controller: EspritParcBundle:Voiture:findvoiture }
+esprit_findByCountryDQL:
+    path: /findByCountry
+    defaults: { _controller: EspritParcBundle:Voiture:findByCountry }
+esprit_rechercheajax:
+      path: /searchCarAjax
+      defaults: { _controller: EspritParcBundle:Voiture:rechercherAjax }

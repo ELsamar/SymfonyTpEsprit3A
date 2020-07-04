@@ -1,0 +1,64 @@
+cette voiture est la marque <b> {{ marque }}</b> <br>
+<button id="cacher">cacher</button>
+<button id="afficher">afficher</button>
+<button id="toggle">toggle</button>
+<br>
+<button id="vider"> vider </button>
+<button id="supprimer"> supprimer </button>
+<div class="center">
+<h2>Liste des voitures </h2>
+    <h5 >Afficher Logo Voiture</h5>
+
+    <img id="img" src="{{ asset('img/logo.PNG') }}"/>
+<table border="2">
+    <th> id</th>
+    <th> Série </th>
+    <th> Marque </th>
+    <th> Détails </th>
+    {% for voiture in voitures %}
+        <tr >
+            <td> {{ voiture.id }}</td>
+            <td> {{ voiture.serie }}</td>
+            <td> {{ voiture.marque }}</td>
+            <td> <a href="{{path( 'esprit_parc_Details' , {'id':voiture.id,'serie': voiture.serie, 'marque': voiture.marque})}}"> Afficher </a></td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
+<script src="{{ asset('js/jquery-3.2.1.js') }}"> </script>
+
+<script>
+
+    $(document).ready(function () {
+
+        $('img').hide();
+        //survol de souris
+        $('h5').mouseenter(function () {
+            $('h5').css('color','red');
+            $('h5').html('Logo Affiché');
+            $('img').show();
+
+        })
+        $('#cacher').click(function () {
+            $('div').hide();
+        })
+        $('#afficher').click(function () {
+            $('div').show();
+        })
+        $('#toggle').click(function () {
+            $('div').toggle()
+        })
+        $('img').click(function () {
+            $('img').css( 'height' ,100);
+            $('img').css( 'width' ,100);
+            $('img').slideUp().slideDown(); //Chaînage
+
+        })
+        $('#vider').click(function () {
+            $('table').empty();
+        })
+        $('#supprimer').click(function () {
+            $('table').remove();
+        })
+    })
+</script>

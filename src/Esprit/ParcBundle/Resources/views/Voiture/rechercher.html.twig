@@ -1,0 +1,17 @@
+<h3>Rechercher Voiture</h3>
+<form method="post">
+    <label> Rechercher selon serie</label>
+    <input type="text" name="serie"> <br>
+    <input type="button" value="rechercher">
+    {% for voiture  in voitures %}
+        <fieldset>
+            <legend> voiture n : {{ voiture.id}} </legend> <br>
+            <b>Serie </b> {{ voiture.serie}} <br>
+            <b>Date  </b> {{ voiture.datedemisecirculation |date }}<br>
+            <b> Marque </b>{{ voiture.marque }}<br>
+            <b> Modele</b> {{ voiture.Modele.libelle }}<br>
+        </fieldset>
+
+    {% endfor %}
+
+</form>

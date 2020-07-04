@@ -1,0 +1,9 @@
+esprit_etudiant_homepage:
+    path:     /
+    defaults: { _controller: EspritEtudiantBundle:Default:index }
+Hello:
+    path:     /hello
+    defaults: { _controller: EspritEtudiantBundle:Default:sayHello }
+Hello_class:
+    path: /hello/{className}
+    defaults: { _controller: EspritEtudiantBundle:Default:sayHello2 }

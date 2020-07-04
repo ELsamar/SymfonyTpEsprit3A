@@ -1,0 +1,24 @@
+
+
+<center>
+    <h3>liste voiture </h3>
+    <table border="2">
+
+        <th> Serie</th>
+        <th> Date </th>
+        <th> Marque</th>
+        <th> Modele</th>
+        {% for voiture  in voitures %}
+            <tr>
+
+                <td> {{ voiture.serie}}</td>
+                <td> {{ voiture.datedemisecirculation |date }} </td>
+                <td> {{ voiture.marque }}</td>
+                <td>{{ voiture.Modele.libelle }}</td>
+                <td> <a href= "{{path( 'esprit_suppVoiture' , {'id':voiture.id} )}}">supprimer</a></td>
+                <td><a href= "{{path( 'esprit_updateVoiture' , {'id':voiture.id} )}}">mettre a jour </a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</center>

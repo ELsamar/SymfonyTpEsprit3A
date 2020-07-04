@@ -1,0 +1,26 @@
+<center>
+    <h3>Recherche Voiture</h3>
+    <form method="POST">
+    <label>Serie:</label>
+    <input type="text" name="serie" required> <br>
+    <label>Marque:</label>
+    <input type="text" name="marque" required> <br>
+    <input type="submit" value="Recherche">
+    </form>
+
+
+            {% for voiture  in voitures %}
+                <fieldset>
+                   <legend> voiture n : {{ voiture.id}} </legend> <br>
+                    <b>Serie </b> {{ voiture.serie}} <br>
+                    <b>Date  </b> {{ voiture.datedemisecirculation |date }}<br>
+                    <b> Marque </b>{{ voiture.marque }}<br>
+                    <b> Modele</b> {{ voiture.Modele.libelle }}<br>
+                </fieldset>
+
+            {% endfor %}
+
+
+
+
+</center>
